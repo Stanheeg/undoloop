@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>UndoLoop — reversible agent actions</title>
+  <meta name="description" content="A simulated Alexa+ experience where multi-step agent actions are inspectable, transactional, and reversible." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SIMULATED ALEXA+ EXPERIENCE</p>
+        <h1>UndoLoop</h1>
+        <p class="subtitle">An agent that can explain, commit, and undo its work.</p>
+      </div>
+      <div class="status-pill"><span class="dot"></span> Local simulation</div>
+    </header>
+
+    <main class="grid">
+      <section class="panel command-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Ask naturally</p>
+            <h2>Give the agent a goal</h2>
+          </div>
+          <button id="micBtn" class="ghost" type="button" aria-label="Start voice input">🎙 Voice</button>
+        </div>
+
+        <form id="commandForm">
+          <label class="sr-only" for="commandInput">Instruction</label>
+          <textarea id="commandInput" rows="4" placeholder="Example: I'm heading out. Lock the door, turn off the lights, remind me to bring my charger, and tell Alex I'm on my way."></textarea>
+          <div class="form-row">
+            <span id="voiceHint" class="hint">Voice input uses your browser's speech recognition when available.</span>
+            <button class="primary" type="submit">Build plan →</button>
+          </div>
+        </form>
+
+        <div class="scenario-row" aria-label="Example scenarios">
+          <button class="scenario" data-prompt="I'm heading out. Lock the door, turn off the lights, remind me to bring my charger, and tell Alex I'm on my way.">Leaving home</button>
+          <button class="scenario" data-prompt="I need focus time for 45 minutes. Turn on do not disturb, dim the lights, and remind me to stretch when it ends.">Focus sprint</button>
+          <button class="scenario" data-prompt="Prepare for bedtime. Turn off the living room lights, set the thermostat to 19 degrees, and remind me to charge my phone.">Bedtime</button>
+        </div>
+      </section>
+
+      <section class="panel plan-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Agent plan</p>
+            <h2 id="planTitle">Nothing queued yet</h2>
+          </div>
+          <span id="riskBadge" class="risk neutral">Waiting</span>
+        </div>
+        <div id="planEmpty" class="empty-state">
+          <div class="loop-mark">↶</div>
+          <p>UndoLoop previews side effects before execution, asks for confirmation when needed, and records enough state to reverse every reversible action.</p>
+        </div>
+        <div id="planContent" class="hidden">
+          <ol id="planSteps" class="steps"></ol>
+          <div id="planReason" class="reason"></div>
+          <div class="actions">
+            <button id="discardBtn" class="ghost" type="button">Discard</button>
+            <button id="executeBtn" class="primary" type="button">Commit plan</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel state-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Connected world</p>
+            <h2>Simulated tools</h2>
+          </div>
+          <button id="resetBtn" class="ghost" type="button">Reset</button>
+        </div>
+        <div id="stateGrid" class="state-grid"></div>
+      </section>
+
+      <section class="panel activity-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Trace</p>
+            <h2>Action ledger</h2>
+          </div>
+          <button id="undoBtn" class="ghost" type="button" disabled>↶ Undo last commit</button>
+        </div>
+        <div id="ledger" class="ledger"><p class="muted">No committed actions yet.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="confirmDialog">
+    <form method="dialog" class="dialog-card">
+      <p class="kicker">Confirmation required</p>
+      <h2>External communication is about to happen</h2>
+      <p id="confirmText">This plan includes a message to another person. UndoLoop pauses before irreversible social side effects.</p>
+      <div class="actions">
+        <button value="cancel" class="ghost">Cancel</button>
+        <button value="confirm" class="primary">Confirm & commit</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
