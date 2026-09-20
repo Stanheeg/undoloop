@@ -2,6 +2,8 @@
 
 **A simulated Alexa+ experience where multi-step agent actions are inspectable, transactional, and reversible.**
 
+**Live judge demo:** https://undoloop-tbvbgl.v2.appdeploy.ai/
+
 Built during the 2026 Amazon Developer Hackathon submission window for the Alexa+ track. The project uses the hackathon's explicitly supported **simulated Alexa+ experience** path, which does not require a specific framework or SDK.
 
 ## Why this exists
@@ -68,9 +70,10 @@ Provide a small official “simulated Alexa+ interaction contract” or sample e
 
 - [ ] Join the Amazon Developer Hackathon on Devpost
 - [x] Publish this source in a new GitHub repository created during the hackathon window
-- [ ] Record and upload a <3 minute English demo video to YouTube or Vimeo
+- [x] Record a <3 minute English demo video
+- [ ] Upload the prepared demo video to YouTube or Vimeo and obtain a judge-accessible URL
 - [ ] Submit the project, feedback, chosen Alexa+ track, and repository/video links on Devpost
-- [ ] If entering the Open Source mini challenge, use a newly published open-source repository and provide the required contribution metadata
+- [ ] If entering the Open Source mini challenge, use this newly published open-source repository and provide the required contribution metadata
 
 ## AI disclosure
 
