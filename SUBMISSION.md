@@ -12,6 +12,11 @@ Open Source
 ## One-line pitch
 A simulated Alexa+ agent that previews side effects, commits reversible work transactionally, and tells the truth about what cannot be undone.
 
+## Live demo
+https://undoloop-tbvbgl.v2.appdeploy.ai/
+
+This is the deployed judge demo of the same public repository submission. No account, API key, or paid service is required to interact with it.
+
 ## Project description
 UndoLoop explores a trust primitive for action-taking agents: **preview, gate, commit, and undo**.
 
@@ -84,6 +89,9 @@ Publish a small official **simulated Alexa+ interaction contract / starter proje
 - **Why it matters:** The project provides a concrete pattern for trustworthy agent side effects that can generalize beyond this particular simulation.
 
 ## Judge/test instructions
+Fastest path: open the live demo at https://undoloop-tbvbgl.v2.appdeploy.ai/ and choose **Leaving home**.
+
+For source verification:
 ```bash
 npm test
 npm run check
