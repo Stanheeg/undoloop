@@ -7,7 +7,9 @@ UndoLoop
 Alexa+
 
 ## Mini challenge
-Open Source
+None currently.
+
+The current Amazon rules describe the Open Source mini challenge as a **new, additional** open-source project or a contribution to a public repository made alongside the primary-track submission. UndoLoop itself is the primary-track project, so this draft does **not** claim the Open Source mini challenge unless a separate qualifying contribution is added later.
 
 ## One-line pitch
 A simulated Alexa+ agent that previews side effects, commits reversible work transactionally, and tells the truth about what cannot be undone.
@@ -44,10 +46,10 @@ Verification:
 - GitHub Actions CI: PASS.
 
 ## Alexa+ track fit
-UndoLoop uses the hackathon's explicitly permitted **simulated Alexa+ experience** route. It does not claim production Alexa+ API access, MCP connectivity, real device control, or real message delivery.
+UndoLoop uses the hackathon's explicitly permitted **simulated Alexa+ experience** route. The current official rules state that this alternate path is exempt from the Alexa+ runtime-technology-hook requirement; the repository must include the simulation source and the demo video must clearly show the simulated experience. UndoLoop does not claim production Alexa+ API access, MCP connectivity, real device control, or real message delivery.
 
 ## Why it matters
-Agents are increasingly able to act across homes, communications, and services. As capability grows, a wrong interpretation can create several side effects at once. UndoLoop demonstrates a reusable interaction/runtime pattern for making those actions inspectable and reversible by default while remaining honest about the operations that cannot truly be undone.
+Agents are increasingly able to act across homes, communications, and services. As capability grows, a wrong interpretation can create several side effects at once. UndoLoop demonstrates a reusable interaction/runtime pattern for making those actions inspectable and reversible by default while remaining honest about operations that cannot truly be undone.
 
 ## Product feedback
 
@@ -79,14 +81,6 @@ Publish a small official **simulated Alexa+ interaction contract / starter proje
 - **Severity:** Moderate.
 - **Workaround:** Used the official rule explicitly stating that a simulated Alexa+ experience may use any AI or agentic tool and is exempt from the runtime-technology-hook requirement.
 - **Actionable suggestion:** Add a dedicated "Simulated Alexa+ starter" section with one minimal reference implementation and a checklist for judging requirements.
-
-## Open Source mini challenge
-- **Contribution URL:** https://github.com/Stanheeg/undoloop
-- **Project repository:** https://github.com/Stanheeg/undoloop
-- **GitHub username:** Stanheeg
-- **What I contributed:** A new MIT-licensed project created during the hackathon window implementing a transactional, reversible interaction model for a simulated Alexa+ agent.
-- **How it works:** Natural-language goals become risk-scored tool plans. Reversible preparation is committed before irreversible finalization, and an action ledger stores the transaction snapshot for rollback.
-- **Why it matters:** The project provides a concrete pattern for trustworthy agent side effects that can generalize beyond this particular simulation.
 
 ## Judge/test instructions
 Fastest path: open the live demo at https://undoloop-tbvbgl.v2.appdeploy.ai/ and choose **Leaving home**.
