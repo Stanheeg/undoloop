@@ -43,7 +43,7 @@ npm test
 npm run check
 ```
 
-Tests cover risk classification, execution ordering, before/after previews, successful commits, injected prepare-stage failure, rollback residuals, sensitive confirmation, and conservative fallback behavior.
+The current automated suite has **33 passing tests**. It covers risk classification, execution ordering, before/after previews, successful commits, injected prepare-stage failure, rollback residuals, sensitive confirmation, conservative fallback behavior, and transactional invariant/property checks across multiple scenarios and starting states.
 
 ## Suggested demo flow (under 3 minutes)
 
