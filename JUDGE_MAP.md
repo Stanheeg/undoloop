@@ -5,7 +5,7 @@
 - Explicit prepare/finalize phases
 - Atomic prepare abort behavior
 - Reversible snapshot rollback with residual-effect accounting
-- 8 automated tests plus syntax and HTTP smoke checks
+- 33 automated tests (8 focused engine tests + 25 transaction-invariant/property checks), plus syntax and HTTP smoke checks
 
 ## Design
 - Before → after diffs

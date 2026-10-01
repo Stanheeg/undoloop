@@ -40,7 +40,7 @@ The current simulation covers door state, lights, thermostat, Do Not Disturb, re
 - Zero-dependency Node static server for local judging.
 
 Verification:
-- Local test suite: **8/8 PASS**.
+- Local test suite: **33/33 PASS** (8 focused engine tests + 25 transaction-invariant/property checks).
 - Local syntax checks: PASS.
 - Local HTTP smoke checks: PASS.
 - GitHub Actions CI: PASS.
